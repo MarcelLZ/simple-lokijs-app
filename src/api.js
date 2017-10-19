@@ -2,7 +2,10 @@ import { Router } from 'express'
 import Loki from 'lokijs'
 
 const router = new Router()
-const db = new Loki('../lokidb.json')
+
+// This is the lokijs - An in-memory db
+// Here, I set a autosave flag to persist the data
+const db = new Loki('../lokidb.db', { autosave: true, autosaveInterval: 4000 })
 const things = db.addCollection('things')
 
 router.post('/', (req, res) => {
