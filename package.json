@@ -4,7 +4,7 @@
   "description": "It's a simple app to test the lokijs in-memory db",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/api/index.js",
+    "start": "nodemon --exec babel-node src/index.js",
     "test": "./node_modules/.bin/mocha src/test --require babel-register --recursive --watch --reporter spec || exit 0"
   },
   "repository": {
@@ -25,7 +25,8 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "lokijs": "^1.5.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
