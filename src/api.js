@@ -5,18 +5,20 @@ const router = new Router()
 
 // This is the lokijs - An in-memory db
 // Here, I set a autosave flag to persist the data
-const db = new Loki('../loki.db', { autosave: true, autosaveInterval: 1000 })
-const things = db.addCollection('things')
+const dataBase = new Loki('./db.json', { autosave: true, autosaveInterval: 1000 })
+const things = dataBase.addCollection('things')
 
-router.post('/', (req, res) => {
-  let { description } = req.body
+router.post('/', (request, response) => {
+  let { description } = request.body
   things.insert({ description })
-  res.json(description)
+  dataBase.saveDatabase()
+
+  response.json(description)
 })
 
-router.get('/', (req, res) => {
+router.get('/', (request, response) => {
   let allData = things.chain().data()
-  res.json(allData)
+  response.json(allData)
 })
 
 export default router
