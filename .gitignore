@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# Ignoring the db file
+lokidb.json
