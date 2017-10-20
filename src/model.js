@@ -12,9 +12,7 @@ export function save (registry) {
 }
 
 export function getAll () {
-  return getCollection()
-    .chain()
-    .data()
+  return getCollection().find({});
 }
 
 function createCollection () {

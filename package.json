@@ -4,8 +4,8 @@
   "description": "It's a simple app to test the lokijs in-memory db",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
-    "build": "./node_modules/.bin/babel src -d dist",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "start": "./node_modules/.bin/babel src -d dist && node dist/index.js",
     "test": "./node_modules/.bin/mocha src/test --require babel-register --recursive --watch --reporter spec || exit 0"
   },
   "repository": {
