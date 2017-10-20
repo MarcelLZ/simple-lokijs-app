@@ -58,7 +58,7 @@ typings/
 .env
 
 # Ignoring the db file
-lokidb.json
+db.json
 
 # Ignoring dist folder
 /dist
