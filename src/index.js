@@ -4,7 +4,7 @@ import cors from 'cors'
 
 import api from './api'
 
-const PORT = 9000
+const PORT = process.env.PORT || 9000
 
 express()
   .use('*', cors({ origin: '*' }))
